@@ -1,5 +1,10 @@
 import streamlit as st
 from mi_negocio import *
+def buscar_posicion(lista, nombre):
+    for i in range(len(lista)):
+        if lista[i] == nombre:
+            return i
+    return -1
 NOMBRE_KIOSCO = "Kioskito"
 LOGO = "logo.png"
 EFECTIVO = "Efectivo"
