@@ -7,7 +7,6 @@ def renglon(pdf, texto, valor):
     pdf.cell(0, 9, valor, align="R", new_x="LMARGIN", new_y="NEXT")
 def armar_pdf(numero, fecha, cliente, productoa, productob, productoc, cantidada, cantidadb, cantidadc, precioa, preciob, precioc,
               subtotala, subtotalb, subtotalc, subtotalf, descuento, iva, total):
-    pdf = FPDF()                      # pdf es el documento
     pdf.add_page()
  
     # encabezado: logo + nombre + numero y fecha
