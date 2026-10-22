@@ -1,7 +1,7 @@
 import streamlit as st
 from mi_negocio import *
 import calculos as cl
-import pdf_presupuesto as pdf
+import pdf_presupuesto
 NOMBRE_KIOSCO = "Kioskito"
 LOGO = "logo.png"
 EFECTIVO = "Efectivo"
@@ -36,5 +36,5 @@ else:
     descuento = 0
 iva = cl.calcular_iva(descontado)
 total = descontado+iva
-archivo=pdf.armar_pdf(numero, fecha, nombre, producto1, producto2, producto3, cantidad1, cantidad2, cantidad3, precio1, precio2, precio3, subtotal1, subtotal2, subtotal3, subtotal_final, descuento, iva, total)
+archivo=pdf_presupuesto.armar_pdf(numero, fecha, nombre, producto1, producto2, producto3, cantidad1, cantidad2, cantidad3, precio1, precio2, precio3, subtotal1, subtotal2, subtotal3, subtotal_final, descuento, iva, total)
 st.download_button("Descargar presupuesto (PDF)", archivo, file_name=f"presupuesto_{numero}.pdf", mime="application/pdf")
