@@ -1,4 +1,4 @@
-from fpdf import FPDF
+
 import streamlit as st
 from mi_negocio import *
 import calculos as cl
