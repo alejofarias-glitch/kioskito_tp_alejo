@@ -1,6 +1,5 @@
 import streamlit as st
 from mi_negocio import *
-from calculos import *
 NOMBRE_KIOSCO = "Kioskito"
 LOGO = "logo.png"
 EFECTIVO = "Efectivo"
