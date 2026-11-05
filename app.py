@@ -39,7 +39,7 @@ else:
 iva = cl.calcular_iva(descontado)
 total = descontado+iva
 archivo=pdf_presupuesto.armar_pdf(numero, fecha, nombre, producto1, producto2, producto3, cantidad1, cantidad2, cantidad3, precio1, precio2, precio3, subtotal1, subtotal2, subtotal3, subtotal_final, descuento, iva, total)
-if cliente == "":
+if nombre == "":
     st.warning("Escribí el nombre del cliente para armar el presupuesto")
 else:
     st.download_button("Descargar presupuesto (PDF)", archivo, file_name=f"presupuesto_{numero}.pdf", mime="application/pdf")
