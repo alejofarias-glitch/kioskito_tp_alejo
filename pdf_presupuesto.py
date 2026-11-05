@@ -2,6 +2,10 @@ from fpdf import FPDF
 import streamlit as st
 from mi_negocio import *
 from calculos import *
+
+def limpiar(texto):
+    return texto.encode("latin-1", "ignore").decode("latin-1").strip()
+    
 def renglon(pdf, texto, valor):
     # un renglon con el texto a la izquierda y el valor a la derecha
     pdf.cell(120, 9, texto)
@@ -10,8 +14,6 @@ def armar_pdf(numero, fecha, cliente, productoa, productob, productoc, cantidada
               subtotala, subtotalb, subtotalc, subtotalf, descuento, iva, total):
     pdf = FPDF()
     pdf.add_page()
-def limpiar(texto):
-    return texto.encode("latin-1", "ignore").decode("latin-1").strip()
  
     # encabezado: logo + nombre + numero y fecha
     pdf.image(LOGO, x=10, y=10, w=28)
@@ -46,6 +48,7 @@ def limpiar(texto):
     pdf.cell(0, 6, "Presupuesto válido por 7 días.", new_x="LMARGIN", new_y="NEXT")
  
     return bytes(pdf.output())
+
 
                   
 
