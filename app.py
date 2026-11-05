@@ -2,7 +2,7 @@ from fpdf import FPDF
 import streamlit as st
 from mi_negocio import *
 import calculos as cl
-from pdf_presupuesto import *
+import pdf_presupuesto
 NOMBRE_KIOSCO = "Kioskito"
 LOGO = "logo.png"
 EFECTIVO = "Efectivo"
