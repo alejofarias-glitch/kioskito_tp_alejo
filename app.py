@@ -3,7 +3,7 @@ import streamlit as st
 from mi_negocio import *
 import calculos as cl
 import pdf_presupuesto
-import limpiar from pdf_presupuesto
+from pdf_presupuesto import limpiar
 NOMBRE_KIOSCO = "Kioskito"
 LOGO = "logo.png"
 EFECTIVO = "Efectivo"
