@@ -11,6 +11,7 @@ productos=["gaseosa", "alfajor", "pebete", "chicles", "agua"]
 precios=[   2000,      1500,      2500,     500,       1100]
 st.title("Kioskito")
 nombre = st.text_input("Ingrese su nombre")
+nombre = limpiar(nombre)      # ¡antes de usarlo en el PDF!
 producto1 = st.selectbox("Producto N°1", productos)
 cantidad1 = st.number_input("Ingrese la cantidad del primer producto", min_value=0, step=1)
 producto2 = st.selectbox("Producto N°2", productos)
@@ -38,4 +39,7 @@ else:
 iva = cl.calcular_iva(descontado)
 total = descontado+iva
 archivo=pdf_presupuesto.armar_pdf(numero, fecha, nombre, producto1, producto2, producto3, cantidad1, cantidad2, cantidad3, precio1, precio2, precio3, subtotal1, subtotal2, subtotal3, subtotal_final, descuento, iva, total)
-st.download_button("Descargar presupuesto (PDF)", archivo, file_name=f"presupuesto_{numero}.pdf", mime="application/pdf")
+if cliente == "":
+    st.warning("Escribí el nombre del cliente para armar el presupuesto")
+else:
+    st.download_button("Descargar presupuesto (PDF)", archivo, file_name=f"presupuesto_{numero}.pdf", mime="application/pdf")
